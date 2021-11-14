@@ -1,0 +1,255 @@
+---
+title: "Chapter 2"
+author: "Tina Lasisi"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  workflowr::wflow_html:
+    toc: yes
+    toc_depth: 6
+    toc_float: true
+    number_sections: no
+editor_options:
+  chunk_output_type: console
+---
+
+# Exercises from Chapter 2: R and exploratory data analysis
+
+## Exercise Set 2-1
+
+1) Download and install the current version of R on a computer to which you have regular
+access. R is available from the Comprehensive R Archive Network (CRAN) at http://www.rproject.org. (For Linux users, the best procedure will depend on your distribution.)
+
+2) Open R. When you have succeeded, you should see a window with the licensing information
+for R and a cursor ready to take input.
+
+3) (Optional, but recommended) Download and install RStudio. Close your open R session and
+open RStudio. If you prefer the RStudio interface, then use RStudio to run R for the rest of the
+exercises in the book.
+
+4) Visit the book’s GitHub repository at https://github.com/mdedge/stfs to view additional resources, including R scripts, among which is a script to run all the code in this chapter.
+
+## Exercise Set 2-2
+
+#### 1) Do the same analyses from the tutorial
+(i.e., histogram, take means, box plots, and scatterplot) for the petal length and petal width variables from the iris dataset. (This will be easy if you saved your code as you worked through the tutorial.) What do you see?
+
+Using the `head()` function shows you the first couple of rows of a dataframe and you can specify how many rows:
+```{r}
+head(iris)
+head(iris, 10)
+head(iris, n = 10)
+head(x = iris, n = 10)
+head(n = 10 , x = iris)
+```
+
+Using the `summary()` function gives you a quick overview of the dataframe with summary statistics for each variable:
+```{r}
+summary(iris)
+```
+
+You can use the `$` after a dataframe variable to specify  a variable:
+```{r}
+summary(iris$Sepal.Length)
+```
+
+You can request specific variables like the `mean()` and `median()` using this syntax as well:
+```{r}
+mean(iris$Sepal.Length)
+median(iris$Sepal.Length)
+```
+
+You can make a historgram for a single variable using the `hist()` function:
+```{r}
+hist(iris$Sepal.Length)
+```
+
+Apparently, you can even label this stuff without involving ggplot (who knew?!):
+```{r}
+hist(iris$Sepal.Length, xlab = "Sepal Length", main = "")
+```
+
+Extracting data for a specific species can be done using square brackets that specify the factor of choice:
+```{r}
+mean(iris$Sepal.Length[iris$Species=="setosa"])
+```
+
+If you need to repeat code for multiple factors, you can use a number of options including a `for()` loop or `tapply()` or `aggregate()`. 
+
+```{r}
+
+# for loop
+for(i in unique(iris$Species)){
+  print(mean(iris$Sepal.Length[iris$Species == i]))
+}
+
+# tapply
+tapply(iris$Sepal.Length, iris$Species, mean)
+
+# aggregate
+aggregate(iris$Sepal.Length, list(iris$Species), mean)
+```
+
+Another option is writing your own functions (although these are more useful for complex scenarios where no out-of-the-box function works):
+
+```{r}
+conditional.mean <- function(x, y){
+  for(i in unique(y)){
+    print(mean(x[y == i]))
+  }
+}
+```
+
+Once defined, instead of having to copy paste the different variables, you can just cycle through them:
+
+```{r}
+conditional.mean(x = iris$Sepal.Length, y = iris$Species)
+conditional.mean(x = iris$Sepal.Width, y = iris$Species)
+
+```
+
+
+But I prefer using tidyverse functions because I can get a dataframe as an output.
+
+```{r}
+library(dplyr)
+```
+
+
+
+```{r}
+iris %>% 
+  group_by(Species) %>% 
+  summarise(mean.Sepal.Length=mean(Sepal.Length))
+
+```
+
+You can make a boxplot with base R:
+```{r}
+boxplot(iris$Sepal.Length ~ iris$Species)
+title(xlab="Species", ylab="Sepal Length")
+
+#idk if I did something wrong bur it seems to just overwrite the labels on teh previous labels.
+```
+
+Here is a scatterplot with base R:
+```{r}
+plot(iris$Sepal.Length, iris$Sepal.Width)
+
+
+```
+
+Now this scatterplot can have different points added to it to distinguish species + a legend.
+```{r}
+
+plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), 
+     xlab = "Sepal Length", ylab = "Sepal Width")
+
+legend("topright", pch = c(1,2,3), legend = c("setosa", "versicolor", "virginica"))
+
+```
+
+Obviously, when you don't have to print in black & white, color is nice to add:
+```{r}
+pal <- c("Dark Green", "Orange", "Purple")
+plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), col = pal[as.numeric(iris$Species)],
+     xlab = "Sepal Length", ylab = "Sepal Width")
+
+legend("topright", pch = c(1,2,3), col = pal, legend = c("setosa", "versicolor", "virginica"))
+
+```
+
+This is how I'd do it with ggplot:
+```{r}
+library(ggplot2)
+
+```
+
+Boxplot
+```{r}
+iris %>% ggplot(aes(x=Species, y=Sepal.Length, fill=Species)) +
+  geom_violin() +
+  geom_boxplot(width = 0.2)+
+  theme_classic()
+
+```
+
+```{r}
+iris %>% ggplot(aes(x=Species, y=Sepal.Width, fill=Species)) +
+  geom_violin() +
+  geom_boxplot(width = 0.2)+
+  theme_classic()
+
+```
+
+Scatter
+```{r}
+
+iris %>% ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
+  geom_point() +
+  theme_classic()+
+  stat_ellipse() # just adding an ellipse to be extra
+  
+
+```
+
+
+Finally, we cover how to concatenate (add multiple items to a vector), as is done in the plot legend info above:
+```{r}
+c(1,2,3)
+```
+
+
+#### 2) A major reason for R’s utility is the wide variety of packages available. 
+In this exercise, we will install and use the gpairs package (Emerson et al., 2013). The gpairs package will allow us to access a lot of the information we gathered in the tutorial using just one command.
+
+##### (a) Install gpairs. 
+If you are using R for Mac or Windows, there will be a “Packages” menu, and you can select the “install packages” option. On any operating system, you also have the option of using the command
+
+```{r}
+install.packages("gpairs")
+```
+
+You will be asked to choose a “mirror”—this is just a server from which you will download the package. Picking the one that is geographically closest to you will usually give the fastest installation. You only need to install a package once.
+
+##### (b) Load the package. 
+Do this using the `library()` command:
+```{r}
+library(gpairs)
+```
+
+Though you only have to install the package once, you have to load it during every R session in which you want to use it. Also notice that though the quotes around gpairs are required when the package is installed, they are optional when the package is loaded.
+
+##### (c) Now you have access to the functions and data that are part of the gpairs package. 
+The centerpiece of the gpairs package is the gpairs() function, which produces “generalized pairs plots”—plots that allow simultaneous visualization of pairwise relationships between several variables. Try the following command:
+```{r}
+gpairs(iris, scatter.pars = list(col = as.numeric(iris$Species)))
+
+```
+
+Some of the plots should look familiar. What do you see?
+### 3) Later in the book, we will use a number of original R functions to complete the exercises.
+Many of the functions are printed here, and one way to define them would be to re-type them (or copy and paste them, if you are reading electronically). But this is tedious and prone to error. A better way is to install the book’s companion R package, stfspack. The package is hosted on github.com rather than CRAN, so you will need to follow a slightly different (but just as easy) procedure to acquire it. First, you will need to install and load the
+devtools package (Wickham & Chang, 2016) from CRAN. The following two lines of code will do the trick:
+```{r}
+install.packages("devtools")
+library(devtools)
+```
+
+Installing the devtools package may take a minute or two. With devtools loaded, we can install stfspack from github with
+
+```{r}
+install_github("mdedge/stfspack")
+```
+
+Now to load the package, use `library()` as usual
+
+```{r}
+library(stfspack)
+```
+
+If you restart R and want to use the package, you need only execute the final `library()` command. That is, you only need to install the package once, but you need to reload it every time you restart R and want to use the functions defined in it. You can also find an R script containing all the functions included in stfspack at the book’s GitHub repository, http://github.com/mdedge/stfs/. If you would rather not install stfspack, you can define the functions by running the code in that file.
+```{r}
+
+
+```
+
