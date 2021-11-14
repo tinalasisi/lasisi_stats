@@ -9,3 +9,6 @@ editor_options:
 ---
 
 Welcome to my research website.
+
+## Exercises from Statistical Thinking From Scratch
+[Chapter 2](ch2.html)
