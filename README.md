@@ -1,6 +1,6 @@
 # Lasisi Stats Work
 
-Markdown website with work can be founder [here](https://tinalasisi.github.io/lasisi_stats/).
+Markdown website with work can be found [here](https://tinalasisi.github.io/lasisi_stats/).
 
 A [workflowr][] project.
 
