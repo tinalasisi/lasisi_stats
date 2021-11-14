@@ -325,7 +325,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">lasisi_stats</a>
+      <a class="navbar-brand" href="index.html">Lasisi Stats work</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -468,22 +468,24 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtinalasisilasisistatstree9dffef5cb511251902d64b77d1efe62cf376de59targetblank9dffef5a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/tinalasisi/lasisi_stats/tree/9dffef5cb511251902d64b77d1efe62cf376de59" target="_blank">9dffef5</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtinalasisilasisistatstree3964f8c2d52cd962889eb360963ebcb20c31e5e4targetblank3964f8ca"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/tinalasisi/lasisi_stats/tree/3964f8c2d52cd962889eb360963ebcb20c31e5e4" target="_blank">3964f8c</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomtinalasisilasisistatstree9dffef5cb511251902d64b77d1efe62cf376de59targetblank9dffef5a" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomtinalasisilasisistatstree3964f8c2d52cd962889eb360963ebcb20c31e5e4targetblank3964f8ca" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility.
 </p>
 <p>
-The results in this page were generated with repository version <a href="https://github.com/tinalasisi/lasisi_stats/tree/9dffef5cb511251902d64b77d1efe62cf376de59" target="_blank">9dffef5</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
+The results in this page were generated with repository version <a href="https://github.com/tinalasisi/lasisi_stats/tree/3964f8c2d52cd962889eb360963ebcb20c31e5e4" target="_blank">3964f8c</a>. See the <em>Past versions</em> tab to see a history of the changes made to the R Markdown and HTML files.
 </p>
 <p>
 Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-working directory clean
+Unstaged changes:
+    Modified:   analysis/_site.yml
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not included in this status report because it is ok for generated content to have uncommitted changes.
@@ -521,6 +523,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/tinalasisi/lasisi_stats/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/ch2.html" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+<td>
+Build site.
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -646,9 +665,83 @@ Updating exercise set from Ch2
 <p>You can make a historgram for a single variable using the <code>hist()</code> function:</p>
 <pre class="r"><code>hist(iris$Sepal.Length)</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-5-1">
+Past versions of unnamed-chunk-5-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-5-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-5-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Apparently, you can even label this stuff without involving ggplot (who knew?!):</p>
 <pre class="r"><code>hist(iris$Sepal.Length, xlab = &quot;Sepal Length&quot;, main = &quot;&quot;)</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-6-1">
+Past versions of unnamed-chunk-6-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-6-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-6-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Extracting data for a specific species can be done using square brackets that specify the factor of choice:</p>
 <pre class="r"><code>mean(iris$Sepal.Length[iris$Species==&quot;setosa&quot;])</code></pre>
 <pre><code>[1] 5.006</code></pre>
@@ -708,16 +801,127 @@ Attaching package: &#39;dplyr&#39;</code></pre>
 <pre class="r"><code>boxplot(iris$Sepal.Length ~ iris$Species)
 title(xlab=&quot;Species&quot;, ylab=&quot;Sepal Length&quot;)</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-13-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-13-1">
+Past versions of unnamed-chunk-13-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-13-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-13-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>#idk if I did something wrong bur it seems to just overwrite the labels on teh previous labels.</code></pre>
 <p>Here is a scatterplot with base R:</p>
 <pre class="r"><code>plot(iris$Sepal.Length, iris$Sepal.Width)</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-14-1">
+Past versions of unnamed-chunk-14-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-14-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-14-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Now this scatterplot can have different points added to it to distinguish species + a legend.</p>
 <pre class="r"><code>plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), 
      xlab = &quot;Sepal Length&quot;, ylab = &quot;Sepal Width&quot;)
 
 legend(&quot;topright&quot;, pch = c(1,2,3), legend = c(&quot;setosa&quot;, &quot;versicolor&quot;, &quot;virginica&quot;))</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-15-1">
+Past versions of unnamed-chunk-15-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-15-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-15-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Obviously, when you don’t have to print in black &amp; white, color is nice to add:</p>
 <pre class="r"><code>pal &lt;- c(&quot;Dark Green&quot;, &quot;Orange&quot;, &quot;Purple&quot;)
 plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), col = pal[as.numeric(iris$Species)],
@@ -725,6 +929,43 @@ plot(iris$Sepal.Length, iris$Sepal.Width, pch = as.numeric(iris$Species), col = 
 
 legend(&quot;topright&quot;, pch = c(1,2,3), col = pal, legend = c(&quot;setosa&quot;, &quot;versicolor&quot;, &quot;virginica&quot;))</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-16-1">
+Past versions of unnamed-chunk-16-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-16-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-16-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>This is how I’d do it with ggplot:</p>
 <pre class="r"><code>library(ggplot2)</code></pre>
 <p>Boxplot</p>
@@ -733,17 +974,128 @@ legend(&quot;topright&quot;, pch = c(1,2,3), col = pal, legend = c(&quot;setosa&
   geom_boxplot(width = 0.2)+
   theme_classic()</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-18-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-18-1">
+Past versions of unnamed-chunk-18-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-18-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-18-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <pre class="r"><code>iris %&gt;% ggplot(aes(x=Species, y=Sepal.Width, fill=Species)) +
   geom_violin() +
   geom_boxplot(width = 0.2)+
   theme_classic()</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-19-1">
+Past versions of unnamed-chunk-19-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-19-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-19-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Scatter</p>
 <pre class="r"><code>iris %&gt;% ggplot(aes(x=Sepal.Length, y=Sepal.Width, color=Species)) +
   geom_point() +
   theme_classic()+
   stat_ellipse() # just adding an ellipse to be extra</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-20-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-20-1">
+Past versions of unnamed-chunk-20-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-20-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-20-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Finally, we cover how to concatenate (add multiple items to a vector), as is done in the plot legend info above:</p>
 <pre class="r"><code>c(1,2,3)</code></pre>
 <pre><code>[1] 1 2 3</code></pre>
@@ -757,7 +1109,7 @@ legend(&quot;topright&quot;, pch = c(1,2,3), col = pal, legend = c(&quot;setosa&
 <pre class="r"><code>install.packages(&quot;gpairs&quot;)</code></pre>
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/m7/rxxmkqnj1s362kng5zcd0lpwhz3qpk/T//RtmpicMa3p/downloaded_packages</code></pre>
+    /var/folders/m7/rxxmkqnj1s362kng5zcd0lpwhz3qpk/T//RtmpiJLeH1/downloaded_packages</code></pre>
 <p>You will be asked to choose a “mirror”—this is just a server from which you will download the package. Picking the one that is geographically closest to you will usually give the fastest installation. You only need to install a package once.</p>
 </div>
 <div id="b-load-the-package." class="section level5">
@@ -773,11 +1125,48 @@ The downloaded binary packages are in
 <pre><code>Loading required package: grid</code></pre>
 <pre><code>Loading required package: lattice</code></pre>
 <p><img src="figure/ch2.Rmd/unnamed-chunk-24-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>
+<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-24-1">
+Past versions of unnamed-chunk-24-1.png
+</button>
+</p>
+<div id="fig-unnamed-chunk-24-1" class="collapse">
+<div class="table-responsive">
+<table class="table table-condensed table-hover">
+<thead>
+<tr>
+<th>
+Version
+</th>
+<th>
+Author
+</th>
+<th>
+Date
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<a href="https://github.com/tinalasisi/lasisi_stats/blob/b5e84c6cac32cd191653c0d3645d940521d128bd/docs/figure/ch2.Rmd/unnamed-chunk-24-1.png" target="_blank">b5e84c6</a>
+</td>
+<td>
+Tina Lasisi
+</td>
+<td>
+2021-11-14
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 <p>Some of the plots should look familiar. What do you see? ### 3) Later in the book, we will use a number of original R functions to complete the exercises. Many of the functions are printed here, and one way to define them would be to re-type them (or copy and paste them, if you are reading electronically). But this is tedious and prone to error. A better way is to install the book’s companion R package, stfspack. The package is hosted on github.com rather than CRAN, so you will need to follow a slightly different (but just as easy) procedure to acquire it. First, you will need to install and load the devtools package (Wickham &amp; Chang, 2016) from CRAN. The following two lines of code will do the trick:</p>
 <pre class="r"><code>install.packages(&quot;devtools&quot;)</code></pre>
 <pre><code>
 The downloaded binary packages are in
-    /var/folders/m7/rxxmkqnj1s362kng5zcd0lpwhz3qpk/T//RtmpicMa3p/downloaded_packages</code></pre>
+    /var/folders/m7/rxxmkqnj1s362kng5zcd0lpwhz3qpk/T//RtmpiJLeH1/downloaded_packages</code></pre>
 <pre class="r"><code>library(devtools)</code></pre>
 <pre><code>Loading required package: usethis</code></pre>
 <p>Installing the devtools package may take a minute or two. With devtools loaded, we can install stfspack from github with</p>
