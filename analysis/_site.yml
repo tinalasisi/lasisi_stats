@@ -1,7 +1,7 @@
-name: "lasisi_stats"
+name: "Lasisi Stats work"
 output_dir: ../docs
 navbar:
-  title: "lasisi_stats"
+  title: "Lasisi Stats work"
   left:
   - text: Home
     href: index.html
