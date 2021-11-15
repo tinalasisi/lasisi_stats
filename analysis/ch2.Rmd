@@ -125,10 +125,8 @@ iris %>%
 
 You can make a boxplot with base R:
 ```{r}
-boxplot(iris$Sepal.Length ~ iris$Species)
-title(xlab="Species", ylab="Sepal Length")
+boxplot(iris$Sepal.Length ~ iris$Species, xlab="Species", ylab="Sepal Length")
 
-#idk if I did something wrong bur it seems to just overwrite the labels on teh previous labels.
 ```
 
 Here is a scatterplot with base R:
