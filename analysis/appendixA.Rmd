@@ -1,0 +1,177 @@
+---
+title: "Appendix A"
+author: "Tina Lasisi"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Exercise 1
+
+```{r}
+library(tidyverse)
+library(Deriv)
+library(Ryacas)
+
+```
+
+
+### a
+
+$$f(x) = x^2 - 2x + 1(=x2-2x + 1x^0)$$
+```{r}
+
+# save function as var
+fast <- "x^2 - 2*x + 1"
+
+
+# save as expression
+fa <- expression(x^2 - 2*x + 1)
+
+# as R function
+funa <- function(x){
+  x^2 - 2*x + 1
+  }
+
+```
+
+```{r plotfunc}
+
+plotfunc <- function(func){
+  
+  ggplot(data.frame(x=c(-5,5)), aes(x = x)) +
+  stat_function(fun = func, geom = "line")
+}
+
+```
+
+#### plot
+```{r}
+
+plotfunc(funa)
+
+```
+
+
+```{r derivfunc}
+
+# Find derivative
+
+findDeriv <- function(exp){
+  exp %>% 
+  y_fn("D(x)") %>% 
+  yac_str()
+}
+
+prettyPrint <- function(func){
+   func %>% 
+    y_fn("TeXForm") %>% 
+    yac_str() %>%
+    paste0("$$", ., "$$")
+}
+
+```
+
+#### derivative
+```{r results='asis'}
+findDeriv(fa) %>% 
+  prettyPrint()
+
+```
+
+```{r}
+
+SolveZero <- function(func) {
+  findDeriv(func) %>% 
+  yac_str() %>% 
+  y_fn("Solve", "x") %>% 
+  yac_str()
+}
+```
+
+#### solution
+```{r}
+SolveZero(fa)
+
+```
+
+
+### b
+
+$$f(x) = -3x^2 + 12x - 5$$
+```{r}
+
+# as expression in R
+
+fbst <- "-3*x^2 + 12*x - 5"
+
+fb <- expression(-3*x^2 + 12*x - 5)
+
+# as R function
+
+funb <- function(x){
+  -3*x^2 + 12*x - 5
+  }
+
+```
+
+
+#### plot
+```{r}
+
+plotfunc(funb)
+
+```
+
+#### derivative
+```{r results='asis'}
+findDeriv(fb)%>% 
+  prettyPrint()
+```
+
+
+#### solution
+```{r}
+
+SolveZero(fb)
+```
+
+### c
+
+$$f(x) = x^3 - 3x^2$$
+```{r}
+
+# as expression in R
+
+fc <- expression(x^3-3*x^2)
+
+# as R function
+
+func <- function(x){
+  x^3-3*x^2
+  }
+
+```
+
+
+#### plot
+```{r}
+
+plotfunc(func)
+
+```
+
+
+#### derivative
+```{r results='asis'}
+findDeriv(fc)%>% 
+  prettyPrint()
+```
+
+#### solution
+```{r}
+SolveZero(fc)
+
+```
+
