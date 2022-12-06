@@ -11,9 +11,9 @@
 
 <meta name="author" content="Tina Lasisi" />
 
-<meta name="date" content="2022-12-03" />
+<meta name="date" content="2022-12-04" />
 
-<title>Appendix A</title>
+<title>ch4</title>
 
 <script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -351,9 +351,9 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Appendix A</h1>
+<h1 class="title toc-ignore">ch4</h1>
 <h4 class="author">Tina Lasisi</h4>
-<h4 class="date">December 03, 2022</h4>
+<h4 class="date">December 04, 2022</h4>
 
 </div>
 
@@ -361,7 +361,7 @@ div.tocify {
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-report" data-toggle="collapse" data-target="#workflowr-report">
 <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
-workflowr <span class="glyphicon glyphicon-ok text-success"
+workflowr <span class="glyphicon glyphicon-exclamation-sign text-danger"
 aria-hidden="true"></span>
 </button>
 </p>
@@ -372,8 +372,8 @@ aria-hidden="true"></span>
 </li>
 <li>
 <a data-toggle="tab" href="#checks"> Checks <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
-</a>
+class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> </a>
 </li>
 <li>
 <a data-toggle="tab" href="#versions">Past versions</a>
@@ -382,13 +382,13 @@ class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span>
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2022-12-03
+<strong>Last updated:</strong> 2022-12-04
 </p>
 <p>
 <strong>Checks:</strong> <span
-class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7
+class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 6
 <span class="glyphicon glyphicon-exclamation-sign text-danger"
-aria-hidden="true"></span> 0
+aria-hidden="true"></span> 1
 </p>
 <p>
 <strong>Knit directory:</strong> <code>lasisi_stats/</code> <span
@@ -411,18 +411,21 @@ versions</em> tab lists the development history.
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguptodate">
-<span class="glyphicon glyphicon-ok text-success"
-aria-hidden="true"></span> <strong>R Markdown file:</strong> up-to-date
-</a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRMarkdownfilestronguncommittedchanges">
+<span class="glyphicon glyphicon-exclamation-sign text-danger"
+aria-hidden="true"></span> <strong>R Markdown file:</strong> uncommitted
+changes </a>
 </p>
 </div>
-<div id="strongRMarkdownfilestronguptodate"
+<div id="strongRMarkdownfilestronguncommittedchanges"
 class="panel-collapse collapse">
 <div class="panel-body">
-<p>Great! Since the R Markdown file has been committed to the Git
-repository, you know the exact version of the code that produced these
-results.</p>
+<p>The R Markdown is untracked by Git. To know which version of the R
+Markdown file created these results, you’ll want to first commit it to
+the Git repo. If you’re still working on the analysis, you can ignore
+this warning. When you’re finished, you can run
+<code>wflow_publish</code> to commit the R Markdown file and build the
+HTML.</p>
 </div>
 </div>
 </div>
@@ -549,6 +552,12 @@ Ignored files:
     Ignored:    .Rhistory
     Ignored:    .Rproj.user/
 
+Untracked files:
+    Untracked:  analysis/ch4.Rmd
+
+Unstaged changes:
+    Modified:   analysis/appendixA.Rmd
+
 </code></pre>
 <p>
 Note that any generated files, e.g. HTML, png, CSS, etc., are not
@@ -562,80 +571,71 @@ have uncommitted changes.
 <hr>
 </div>
 <div id="versions" class="tab-pane fade">
-
 <p>
-These are the previous versions of the repository in which changes were
-made to the R Markdown (<code>analysis/appendixA.Rmd</code>) and HTML
-(<code>docs/appendixA.html</code>) files. If you’ve configured a remote
-Git repository (see <code>?wflow_git_remote</code>), click on the
-hyperlinks in the table below to view the files as they were in that
-past version.
+There are no past versions. Publish this analysis with
+<code>wflow_publish()</code> to start tracking its development.
 </p>
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-File
-</th>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-<th>
-Message
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-Rmd
-</td>
-<td>
-<a href="https://github.com/tinalasisi/lasisi_stats/blob/9c427e3f744a312ef34181e1f88b42f85edccf8a/analysis/appendixA.Rmd" target="_blank">9c427e3</a>
-</td>
-<td>
-Tina Lasisi
-</td>
-<td>
-2022-12-03
-</td>
-<td>
-Appendix A set 1 exercises
-</td>
-</tr>
-<tr>
-<td>
-html
-</td>
-<td>
-<a href="https://rawcdn.githack.com/tinalasisi/lasisi_stats/9c427e3f744a312ef34181e1f88b42f85edccf8a/docs/appendixA.html" target="_blank">9c427e3</a>
-</td>
-<td>
-Tina Lasisi
-</td>
-<td>
-2022-12-03
-</td>
-<td>
-Appendix A set 1 exercises
-</td>
-</tr>
-</tbody>
-</table>
-</div>
 <hr>
 </div>
 </div>
 </div>
-<div id="exercise-1" class="section level2">
-<h2>Exercise 1</h2>
+<div id="set-1" class="section level2">
+<h2>Set 1</h2>
+<div id="section" class="section level3">
+<h3>1)</h3>
+<p>The probability of <span class="math inline">\(P(A^C)\)</span> is
+<span class="math inline">\(1-P(A)\)</span> because the probability of
+<span class="math inline">\(P(A) + P(A^C) = 1\)</span>. This is because
+of the property of complements that states that all possible sets are
+contained within the union of these two sets <span
+class="math inline">\(A \cup A^C\)</span> and no sets are contained with
+<span class="math inline">\(A \cap A^C\)</span>. In terms of
+probability, <span class="math inline">\(P(A \cup A^C) = 1 = P(A) +
+PA^C\)</span></p>
+</div>
+<div id="section-1" class="section level3">
+<h3>2)</h3>
+<p>The probability that the roulette ball lands in either black or red
+is:</p>
+<p><span class="math display">\[
+P(B) + P(R) = 1 - P(B+R)
+\]</span></p>
+</div>
+</div>
+<div id="set-2" class="section level2">
+<h2>Set 2</h2>
+<div id="section-2" class="section level3">
+<h3>1)</h3>
+<p>If <span class="math inline">\(P(A|B) = P(A)\)</span> then:</p>
+<p><span class="math display">\[
+\frac{P(A \cap B)}{P(B)} = P(A)
+\]</span></p>
+<p>Multiplying by P(B) on both sides results in: <span
+class="math display">\[
+P(A\cap B) = P(A)P(B)
+\]</span></p>
+<p>If <span class="math inline">\(P(A|B) = P(A)\)</span> then <span
+class="math inline">\(P(A\cap B) = P(A)P(B)\)</span> we can divide both
+sides by <span class="math inline">\(P(A)\)</span> resulting in <span
+class="math inline">\(P(B|A) = P(B)\)</span></p>
+</div>
+<div id="section-3" class="section level3">
+<h3>2)</h3>
+<p>If you know <span class="math inline">\(P(A|B)\)</span>, <span
+class="math inline">\(P(A)\)</span>, and <span
+class="math inline">\(P(B)\)</span> then you can calculate <span
+class="math inline">\(P(B|A)\)</span> as follows:</p>
+<p><span class="math display">\[
+P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{\frac{P(A \cap
+B)}{P(B)}PB}{P(A)} = \frac{P(A|B)P(B)}{P(A)}
+\]</span></p>
+</div>
+</div>
+<div id="set-3" class="section level2">
+<h2>Set 3</h2>
+<div id="section-4" class="section level3">
+<h3>1)</h3>
+<p>The total set of possible outcomes is:</p>
 <pre class="r"><code>library(tidyverse)</code></pre>
 <pre><code>── Attaching packages ─────────────────────────────────────── tidyverse 1.3.2 ──
 ✔ ggplot2 3.4.0      ✔ purrr   0.3.5 
@@ -645,248 +645,214 @@ Appendix A set 1 exercises
 ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
 ✖ dplyr::filter() masks stats::filter()
 ✖ dplyr::lag()    masks stats::lag()</code></pre>
-<pre class="r"><code>library(Deriv)
-library(Ryacas)</code></pre>
-<pre><code>
-Attaching package: &#39;Ryacas&#39;
+<pre class="r"><code>game &lt;- tibble(
+  first = c(&quot;H&quot;, &quot;T&quot;),
+  second = c(&quot;H&quot;, &quot;T&quot;),
+  third = c(&quot;H&quot;, &quot;T&quot;)
+)
 
-The following object is masked from &#39;package:purrr&#39;:
+total &lt;- game %&gt;% 
+  expand(first, second, third) %&gt;% 
+  mutate(NumHeads=rowSums(.==&quot;H&quot;))
 
-    simplify
-
-The following object is masked from &#39;package:stats&#39;:
-
-    integrate
-
-The following objects are masked from &#39;package:base&#39;:
-
-    %*%, diag, diag&lt;-, lower.tri, upper.tri</code></pre>
-<div id="a" class="section level3">
-<h3>a</h3>
-<p><span class="math display">\[f(x) = x^2 - 2x + 1(=x2-2x +
-1x^0)\]</span></p>
-<pre class="r"><code># save function as var
-fast &lt;- &quot;x^2 - 2*x + 1&quot;
-
-
-# save as expression
-fa &lt;- expression(x^2 - 2*x + 1)
-
-# as R function
-funa &lt;- function(x){
-  x^2 - 2*x + 1
-  }</code></pre>
-<pre class="r"><code>plotfunc &lt;- function(func){
-  
-  ggplot(data.frame(x=c(-5,5)), aes(x = x)) +
-  stat_function(fun = func, geom = &quot;line&quot;)
-}</code></pre>
-<div id="plot" class="section level4">
-<h4>plot</h4>
-<pre class="r"><code>plotfunc(funa)</code></pre>
-<p><img src="figure/appendixA.Rmd/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-3-1">
-Past versions of unnamed-chunk-3-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-3-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/tinalasisi/lasisi_stats/blob/9c427e3f744a312ef34181e1f88b42f85edccf8a/docs/figure/appendixA.Rmd/unnamed-chunk-3-1.png" target="_blank">9c427e3</a>
-</td>
-<td>
-Tina Lasisi
-</td>
-<td>
-2022-12-03
-</td>
-</tr>
-</tbody>
-</table>
+total</code></pre>
+<pre><code># A tibble: 8 × 4
+  first second third NumHeads
+  &lt;chr&gt; &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;
+1 H     H      H            3
+2 H     H      T            2
+3 H     T      H            2
+4 H     T      T            1
+5 T     H      H            2
+6 T     H      T            1
+7 T     T      H            1
+8 T     T      T            0</code></pre>
+<p>Summarized as:</p>
+<pre class="r"><code>total %&gt;% 
+  count(NumHeads)</code></pre>
+<pre><code># A tibble: 4 × 2
+  NumHeads     n
+     &lt;dbl&gt; &lt;int&gt;
+1        0     1
+2        1     3
+3        2     3
+4        3     1</code></pre>
+<p>So the probability mass function is:</p>
+<p><span class="math display">\[
+f_X(0) = \frac{1}{8}\\
+f_x(1) = \frac{3}{8}\\
+f_x(2) = \frac{3}{8}\\
+f_x(3) =\frac{1}{8}
+\]</span> ### 2) The sum would be 1 because all possibilities sum to
+1.</p>
+</div>
+<div id="section-5" class="section level3">
+<h3>3)</h3>
+<p>The probability that a random variable <span
+class="math inline">\(X\)</span> falls between <span
+class="math inline">\(a\)</span> and <span
+class="math inline">\(b\)</span> is:</p>
+<p><span class="math display">\[
+F_x(b) -  F_x(a)
+\]</span></p>
 </div>
 </div>
-<pre class="r"><code># Find derivative
+<div id="set-4" class="section level2">
+<h2>Set 4</h2>
+<div id="section-6" class="section level3">
+<h3>1)</h3>
+<p>Test</p>
+<pre class="r"><code>x &lt;- c(0,1)
+Fx &lt;- x 
+plot(x, Fx, type = &quot;l&quot;, xlim = c(-1,2))
+lines(c(-1, 0), c(0, 0))
+lines(c(1,2), c(1, 1))</code></pre>
+<p><img src="figure/ch4.Rmd/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="section-7" class="section level3">
+<h3>2)</h3>
+<pre class="r"><code>x1 &lt;- c(0,0.4)
+x2 &lt;- c(0.4, 0.6)
+x3 &lt;- c(0.6, 1)
+Fx1 &lt;- c(0,0.3)
+Fx2 &lt;- c(0.3, 0.7)
+Fx3 &lt;- c(0.7, 1)
+plot(x1, Fx1, type = &quot;l&quot;, xlim = c(-1,2), ylim = c(0,1), xlab = &quot;x&quot;, ylab = &quot;Fx&quot;)
+lines(x2, Fx2)
+lines(x3, Fx3)
+lines(c(-1, 0), c(0, 0))
+lines(c(1,2), c(1, 1))</code></pre>
+<p><img src="figure/ch4.Rmd/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="set-5" class="section level2">
+<h2>Set 5</h2>
+<div id="section-8" class="section level3">
+<h3>1)</h3>
+<p>It should be 1 because the area under the curve should always be
+1.</p>
+</div>
+</div>
+<div id="set-6" class="section level2">
+<h2>Set 6</h2>
+<div id="section-9" class="section level3">
+<h3>1)</h3>
+<p>The probability of drawing a 0 from a Poisson distribution with
+parameter <span class="math inline">\(\lambda = 5\)</span> can be
+calculated using the Poisson probability mass function, which is given
+by the formula:</p>
+<p><span class="math display">\[ P(x; \lambda) = \frac{\lambda^x
+e^{-\lambda}}{x!} \]</span></p>
+<p>In this case, the probability of drawing a 0 can be calculated by
+plugging <span class="math inline">\(x = 0\)</span> and <span
+class="math inline">\(\lambda = 5\)</span> into the above formula:</p>
+<p><span class="math display">\[ P(0; 5) = \frac{5^0 e^{-5}}{0!} =
+e^{-5} = 0.0067 \]</span></p>
+<p>Therefore, the probability of drawing a 0 from a Poisson distribution
+with parameter $= $5 is approximately 0.0067.</p>
+<p>To calculate the probability of drawing a 1 from a Poisson
+distribution with parameter <span class="math inline">\(\lambda =
+5\)</span>, we can use the same formula as above, but with x = 1:</p>
+<p><span class="math display">\[ P(1; 5) = \frac{5^1 e^{-5}}{1!} =
+5e^{-5} = 0.033 \]</span></p>
+<p>Therefore, the probability of drawing a 1 from a Poisson distribution
+with parameter <span class="math inline">\(\lambda = 5\)</span> is
+approximately <span class="math inline">\(0.033\)</span>.</p>
+<p>To calculate the probability of drawing a 2 from a Poisson
+distribution with parameter <span class="math inline">\(\lambda =
+5\)</span>, we can again use the same formula, but with <span
+class="math inline">\(x = 2\)</span>:</p>
+<p><span class="math display">\[ P(2; 5) = \frac{5^2 e^{-5}}{2!} =
+25e^{-5} = 0.122 \]</span> ### 2)</p>
+<p>Therefore, the probability of drawing a 2 from a Poisson distribution
+with parameter <span class="math inline">\(\lambda = 5\)</span> is
+approximately <span class="math inline">\(0.122\)</span>.</p>
+<p>To calculate the probability of seeing “heads” on the 6th flip of a
+fair coin, we need to consider all of the possible sequences of coin
+flips that could lead to this outcome. There are a total of <span
+class="math inline">\(2^6 = 64\)</span> possible sequences of 6 coin
+flips, and each of these sequences is equally likely to occur.</p>
+<p>Since the coin is fair, the probability of flipping heads on any
+given toss is 0.5, and the probability of flipping tails is also 0.5.
+Therefore, the probability of flipping tails on the first 5 flips and
+heads on the 6th flip is <span class="math inline">\((0.5)^5 \cdot 0.5 =
+0.03125\)</span>.</p>
+<p>Since this is the only sequence of coin flips that would result in
+seeing “heads” on the 6th flip, the probability of this occurring is
+<span class="math inline">\(0.03125\)</span>. This means that the
+probability of seeing “heads” on the 6th flip of a fair coin is
+approximately <span class="math inline">\(0.03125\)</span>.</p>
+</div>
+<div id="section-10" class="section level3">
+<h3>3)</h3>
+<div id="a" class="section level4">
+<h4>a</h4>
+<p>To plot the probability density function (PDF) for a normal
+distribution with a specified mean and standard deviation in the
+statistical program R, we can use the dnorm() function. This function
+takes three arguments: the value of the random variable x, the mean of
+the normal distribution, and the standard deviation of the normal
+distribution.</p>
+<p>For example, to plot the PDF for a normal distribution with mean mu =
+0 and standard deviation sigma = 1:</p>
+<pre class="r"><code># Set the mean of the normal distribution
+mu = 0
 
-findDeriv &lt;- function(exp){
-  exp %&gt;% 
-  y_fn(&quot;D(x)&quot;) %&gt;% 
-  yac_str()
-}
+# Set the standard deviation of the normal distribution
+sigma = 1
 
-prettyPrint &lt;- function(func){
-   func %&gt;% 
-    y_fn(&quot;TeXForm&quot;) %&gt;% 
-    yac_str() %&gt;%
-    paste0(&quot;$$&quot;, ., &quot;$$&quot;)
-}</code></pre>
-</div>
-<div id="derivative" class="section level4">
-<h4>derivative</h4>
-<pre class="r"><code>findDeriv(fa) %&gt;% 
-  prettyPrint()</code></pre>
-<p>[1] “<span class="math display">\[2 x - 2\]</span>”</p>
-<pre class="r"><code>SolveZero &lt;- function(func) {
-  findDeriv(func) %&gt;% 
-  yac_str() %&gt;% 
-  y_fn(&quot;Solve&quot;, &quot;x&quot;) %&gt;% 
-  yac_str()
-}</code></pre>
-</div>
-<div id="solution" class="section level4">
-<h4>solution</h4>
-<pre class="r"><code>SolveZero(fa)</code></pre>
-<pre><code>[1] &quot;{x==1}&quot;</code></pre>
-</div>
-</div>
-<div id="b" class="section level3">
-<h3>b</h3>
-<p><span class="math display">\[f(x) = -3x^2 + 12x - 5\]</span></p>
-<pre class="r"><code># as expression in R
+# Set the value of the random variable x
+x = seq(-3, 3, by = 0.01)
 
-fbst &lt;- &quot;-3*x^2 + 12*x - 5&quot;
+# Plot the probability density function for x
+plot(x, dnorm(x, mu, sigma), type = &quot;l&quot;)</code></pre>
+<p><img src="figure/ch4.Rmd/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b" class="section level4">
+<h4>b</h4>
+<pre class="r"><code># Set the mean of the normal distribution
+mu = 0
 
-fb &lt;- expression(-3*x^2 + 12*x - 5)
+# Set the standard deviation of the normal distribution
+sigma = 1
 
-# as R function
+# Set the value of the random variable x
+x = seq(-3, 3, by = 0.01)
 
-funb &lt;- function(x){
-  -3*x^2 + 12*x - 5
-  }</code></pre>
-<div id="plot-1" class="section level4">
-<h4>plot</h4>
-<pre class="r"><code>plotfunc(funb)</code></pre>
-<p><img src="figure/appendixA.Rmd/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-8-1">
-Past versions of unnamed-chunk-8-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-8-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/tinalasisi/lasisi_stats/blob/9c427e3f744a312ef34181e1f88b42f85edccf8a/docs/figure/appendixA.Rmd/unnamed-chunk-8-1.png" target="_blank">9c427e3</a>
-</td>
-<td>
-Tina Lasisi
-</td>
-<td>
-2022-12-03
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="derivative-1" class="section level4">
-<h4>derivative</h4>
-<pre class="r"><code>findDeriv(fb)%&gt;% 
-  prettyPrint()</code></pre>
-<p>[1] “<span class="math display">\[12 - 6 x\]</span>”</p>
-</div>
-<div id="solution-1" class="section level4">
-<h4>solution</h4>
-<pre class="r"><code>SolveZero(fb)</code></pre>
-<pre><code>[1] &quot;{x==2}&quot;</code></pre>
-</div>
-</div>
-<div id="c" class="section level3">
-<h3>c</h3>
-<p><span class="math display">\[f(x) = x^3 - 3x^2\]</span></p>
-<pre class="r"><code># as expression in R
+# Plot the cumulative distribution function for x
+plot(x, pnorm(x, mu, sigma), type = &quot;l&quot;)</code></pre>
+<p><img src="figure/ch4.Rmd/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>To find the value of x that is at the 97.5th percentile of the
+standard normal distribution in the statistical program R, we can use
+the qnorm() function. This function takes two arguments: the probability
+p and the mean and standard deviation of the normal distribution. It
+returns the value of x that satisfies the equation F_x(x) = p, where
+F_x(x) is the cumulative distribution function of the normal
+distribution.</p>
+<p>For the standard normal distribution, the mean is mu = 0 and the
+standard deviation is sigma = 1. To find the value of x at the 97.5th
+percentile, we need to find the value of x that satisfies the equation
+F_x(x) = 0.975. We can use the following code to do this:</p>
+<pre class="r"><code># Set the mean of the normal distribution
+mu = 0
 
-fc &lt;- expression(x^3-3*x^2)
+# Set the standard deviation of the normal distribution
+sigma = 1
 
-# as R function
+# Set the probability p
+p = 0.975
 
-func &lt;- function(x){
-  x^3-3*x^2
-  }</code></pre>
-<div id="plot-2" class="section level4">
-<h4>plot</h4>
-<pre class="r"><code>plotfunc(func)</code></pre>
-<p><img src="figure/appendixA.Rmd/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
-<p>
-<button type="button" class="btn btn-default btn-xs btn-workflowr btn-workflowr-fig" data-toggle="collapse" data-target="#fig-unnamed-chunk-12-1">
-Past versions of unnamed-chunk-12-1.png
-</button>
-</p>
-<div id="fig-unnamed-chunk-12-1" class="collapse">
-<div class="table-responsive">
-<table class="table table-condensed table-hover">
-<thead>
-<tr>
-<th>
-Version
-</th>
-<th>
-Author
-</th>
-<th>
-Date
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<a href="https://github.com/tinalasisi/lasisi_stats/blob/9c427e3f744a312ef34181e1f88b42f85edccf8a/docs/figure/appendixA.Rmd/unnamed-chunk-12-1.png" target="_blank">9c427e3</a>
-</td>
-<td>
-Tina Lasisi
-</td>
-<td>
-2022-12-03
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div id="derivative-2" class="section level4">
-<h4>derivative</h4>
-<pre class="r"><code>findDeriv(fc)%&gt;% 
-  prettyPrint()</code></pre>
-<p>[1] “<span class="math display">\[3 x ^{2} - 6 x\]</span>”</p>
-</div>
-<div id="solution-2" class="section level4">
-<h4>solution</h4>
-<pre class="r"><code>SolveZero(fc)</code></pre>
-<pre><code>[1] &quot;{x==0,x==2}&quot;</code></pre>
+# Find the value of x that satisfies the equation F_x(x) = p
+x = qnorm(p, mu, sigma)</code></pre>
+<p>This code will calculate the value of x that is at the 97.5th
+percentile of the standard normal distribution, which is the value of x
+that satisfies the equation F_x(x) = 0.975. The result will be a
+numerical value, which is the value of x at the 97.5th percentile of the
+standard normal distribution.</p>
+<p>As a specific example, using the above code will result in the
+following value for x:</p>
+<pre class="r"><code> x</code></pre>
+<pre><code>[1] 1.959964</code></pre>
 <br>
 <p>
 <button type="button" class="btn btn-default btn-workflowr btn-workflowr-sessioninfo" data-toggle="collapse" data-target="#workflowr-sessioninfo" style="display: block;">
@@ -911,9 +877,9 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
- [1] Ryacas_1.1.3.1  Deriv_4.1.3     forcats_0.5.2   stringr_1.5.0  
- [5] dplyr_1.0.10    purrr_0.3.5     readr_2.1.3     tidyr_1.2.1    
- [9] tibble_3.1.8    ggplot2_3.4.0   tidyverse_1.3.2
+[1] forcats_0.5.2   stringr_1.5.0   dplyr_1.0.10    purrr_0.3.5    
+[5] readr_2.1.3     tidyr_1.2.1     tibble_3.1.8    ggplot2_3.4.0  
+[9] tidyverse_1.3.2
 
 loaded via a namespace (and not attached):
  [1] Rcpp_1.0.9          lubridate_1.9.0     assertthat_0.2.1   
@@ -922,24 +888,23 @@ loaded via a namespace (and not attached):
 [10] reprex_2.0.2        evaluate_0.18       highr_0.9          
 [13] httr_1.4.4          pillar_1.8.1        rlang_1.0.6        
 [16] googlesheets4_1.0.1 readxl_1.4.1        rstudioapi_0.14    
-[19] whisker_0.4         jquerylib_0.1.4     rmarkdown_2.18     
-[22] labeling_0.4.2      googledrive_2.0.0   munsell_0.5.0      
-[25] broom_1.0.1         compiler_4.2.2      httpuv_1.6.6       
-[28] modelr_0.1.10       xfun_0.35           pkgconfig_2.0.3    
-[31] htmltools_0.5.3     tidyselect_1.2.0    workflowr_1.7.0    
-[34] fansi_1.0.3         crayon_1.5.2        withr_2.5.0        
-[37] tzdb_0.3.0          dbplyr_2.2.1        later_1.3.0        
-[40] grid_4.2.2          jsonlite_1.8.3      gtable_0.3.1       
-[43] lifecycle_1.0.3     DBI_1.1.3           git2r_0.30.1       
-[46] magrittr_2.0.3      scales_1.2.1        cli_3.4.1          
-[49] stringi_1.7.8       cachem_1.0.6        farver_2.1.1       
-[52] fs_1.5.2            promises_1.2.0.1    xml2_1.3.3         
-[55] bslib_0.4.1         ellipsis_0.3.2      generics_0.1.3     
-[58] vctrs_0.5.1         tools_4.2.2         glue_1.6.2         
-[61] hms_1.1.2           pkgload_1.3.2       fastmap_1.1.0      
-[64] yaml_2.3.6          timechange_0.1.1    colorspace_2.0-3   
-[67] gargle_1.2.1        rvest_1.0.3         knitr_1.41         
-[70] haven_2.5.1         sass_0.4.4         </code></pre>
+[19] jquerylib_0.1.4     rmarkdown_2.18      googledrive_2.0.0  
+[22] munsell_0.5.0       broom_1.0.1         compiler_4.2.2     
+[25] httpuv_1.6.6        modelr_0.1.10       xfun_0.35          
+[28] pkgconfig_2.0.3     htmltools_0.5.3     tidyselect_1.2.0   
+[31] workflowr_1.7.0     fansi_1.0.3         crayon_1.5.2       
+[34] withr_2.5.0         tzdb_0.3.0          dbplyr_2.2.1       
+[37] later_1.3.0         grid_4.2.2          jsonlite_1.8.3     
+[40] gtable_0.3.1        lifecycle_1.0.3     DBI_1.1.3          
+[43] git2r_0.30.1        magrittr_2.0.3      scales_1.2.1       
+[46] cli_3.4.1           stringi_1.7.8       cachem_1.0.6       
+[49] fs_1.5.2            promises_1.2.0.1    xml2_1.3.3         
+[52] bslib_0.4.1         ellipsis_0.3.2      generics_0.1.3     
+[55] vctrs_0.5.1         tools_4.2.2         glue_1.6.2         
+[58] hms_1.1.2           fastmap_1.1.0       yaml_2.3.6         
+[61] timechange_0.1.1    colorspace_2.0-3    gargle_1.2.1       
+[64] rvest_1.0.3         knitr_1.41          haven_2.5.1        
+[67] sass_0.4.4         </code></pre>
 </div>
 </div>
 </div>

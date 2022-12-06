@@ -1,0 +1,313 @@
+---
+title: "ch4"
+author: "Tina Lasisi"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+## Set 1
+
+### 1)
+The probability of $P(A^C)$ is $1-P(A)$ because the probability of $P(A) + P(A^C) = 1$. This is because of the property of complements that states that all possible sets are contained within the union of these two sets $A \cup A^C$ and no sets are contained with $A \cap A^C$. In terms of probability, $P(A \cup A^C) = 1 = P(A) + PA^C$
+
+### 2) 
+The probability that the roulette ball lands in either black or red is:
+
+$$
+P(B) + P(R) = 1 - P(B+R)
+$$
+
+
+## Set 2
+
+### 1)
+If $P(A|B) = P(A)$ then:
+
+$$
+\frac{P(A \cap B)}{P(B)} = P(A)
+$$
+
+Multiplying by P(B) on both sides results in:
+$$
+P(A\cap B) = P(A)P(B)
+$$
+
+If $P(A|B) = P(A)$ then $P(A\cap B) = P(A)P(B)$ we can divide both sides by $P(A)$ resulting in $P(B|A) = P(B)$
+
+### 2)
+
+If you know $P(A|B)$, $P(A)$, and $P(B)$ then you can calculate $P(B|A)$ as follows:
+
+$$
+P(B|A) = \frac{P(A \cap B)}{P(A)} = \frac{\frac{P(A \cap B)}{P(B)}PB}{P(A)} = \frac{P(A|B)P(B)}{P(A)}
+$$
+
+## Set 3
+
+### 1)
+
+The total set of possible outcomes is:
+
+```{r}
+
+library(tidyverse)
+
+game <- tibble(
+  first = c("H", "T"),
+  second = c("H", "T"),
+  third = c("H", "T")
+)
+
+total <- game %>% 
+  expand(first, second, third) %>% 
+  mutate(NumHeads=rowSums(.=="H"))
+
+total
+
+```
+
+Summarized as:
+```{r}
+
+total %>% 
+  count(NumHeads)
+
+```
+
+
+So the probability mass function is:
+
+$$
+f_X(0) = \frac{1}{8}\\
+f_x(1) = \frac{3}{8}\\
+f_x(2) = \frac{3}{8}\\
+f_x(3) =\frac{1}{8}
+$$
+### 2) 
+The sum would be 1 because all possibilities sum to 1.
+
+### 3)
+The probability that a random variable $X$ falls between $a$ and $b$ is:
+
+$$
+F_x(b) -  F_x(a)
+$$
+
+## Set 4
+
+### 1)
+
+Test
+
+```{r}
+
+x <- c(0,1)
+Fx <- x 
+plot(x, Fx, type = "l", xlim = c(-1,2))
+lines(c(-1, 0), c(0, 0))
+lines(c(1,2), c(1, 1))
+```
+
+### 2) 
+```{r}
+
+x1 <- c(0,0.4)
+x2 <- c(0.4, 0.6)
+x3 <- c(0.6, 1)
+Fx1 <- c(0,0.3)
+Fx2 <- c(0.3, 0.7)
+Fx3 <- c(0.7, 1)
+plot(x1, Fx1, type = "l", xlim = c(-1,2), ylim = c(0,1), xlab = "x", ylab = "Fx")
+lines(x2, Fx2)
+lines(x3, Fx3)
+lines(c(-1, 0), c(0, 0))
+lines(c(1,2), c(1, 1))
+
+```
+
+## Set 5
+
+### 1)
+It should be 1 because the area under the curve should always be 1. 
+
+## Set 6
+
+### 1) 
+
+The probability of drawing a 0 from a Poisson distribution with parameter $\lambda = 5$ can be calculated using the Poisson probability mass function, which is given by the formula:
+
+$$ P(x; \lambda) = \frac{\lambda^x e^{-\lambda}}{x!} $$
+
+In this case, the probability of drawing a 0 can be calculated by plugging $x = 0$ and $\lambda = 5$ into the above formula:
+
+$$ P(0; 5) = \frac{5^0 e^{-5}}{0!} = e^{-5} = 0.0067 $$
+
+Therefore, the probability of drawing a 0 from a Poisson distribution with parameter $\lambda = $5 is approximately 0.0067.
+
+To calculate the probability of drawing a 1 from a Poisson distribution with parameter $\lambda = 5$, we can use the same formula as above, but with x = 1:
+
+$$ P(1; 5) = \frac{5^1 e^{-5}}{1!} = 5e^{-5} = 0.033 $$
+
+Therefore, the probability of drawing a 1 from a Poisson distribution with parameter $\lambda = 5$ is approximately $0.033$.
+
+To calculate the probability of drawing a 2 from a Poisson distribution with parameter $\lambda = 5$, we can again use the same formula, but with $x = 2$:
+
+$$ P(2; 5) = \frac{5^2 e^{-5}}{2!} = 25e^{-5} = 0.122 $$
+### 2)
+
+Therefore, the probability of drawing a 2 from a Poisson distribution with parameter $\lambda = 5$ is approximately $0.122$.
+
+To calculate the probability of seeing "heads" on the 6th flip of a fair coin, we need to consider all of the possible sequences of coin flips that could lead to this outcome. There are a total of $2^6 = 64$ possible sequences of 6 coin flips, and each of these sequences is equally likely to occur.
+
+Since the coin is fair, the probability of flipping heads on any given toss is 0.5, and the probability of flipping tails is also 0.5. Therefore, the probability of flipping tails on the first 5 flips and heads on the 6th flip is $(0.5)^5 \cdot 0.5 = 0.03125$.
+
+Since this is the only sequence of coin flips that would result in seeing "heads" on the 6th flip, the probability of this occurring is $0.03125$. This means that the probability of seeing "heads" on the 6th flip of a fair coin is approximately $0.03125$.
+
+### 3) 
+
+#### a
+
+To plot the probability density function (PDF) for a normal distribution with a specified mean and standard deviation in the statistical program R, we can use the dnorm() function. This function takes three arguments: the value of the random variable x, the mean of the normal distribution, and the standard deviation of the normal distribution.
+
+For example, to plot the PDF for a normal distribution with mean mu = 0 and standard deviation sigma = 1:
+
+```{r}
+# Set the mean of the normal distribution
+mu = 0
+
+# Set the standard deviation of the normal distribution
+sigma = 1
+
+# Set the value of the random variable x
+x = seq(-3, 3, by = 0.01)
+
+# Plot the probability density function for x
+plot(x, dnorm(x, mu, sigma), type = "l")
+
+```
+
+
+#### b
+
+```{r}
+
+# Set the mean of the normal distribution
+mu = 0
+
+# Set the standard deviation of the normal distribution
+sigma = 1
+
+# Set the value of the random variable x
+x = seq(-3, 3, by = 0.01)
+
+# Plot the cumulative distribution function for x
+plot(x, pnorm(x, mu, sigma), type = "l")
+
+```
+
+To find the value of x that is at the 97.5th percentile of the standard normal distribution in the statistical program R, we can use the qnorm() function. This function takes two arguments: the probability p and the mean and standard deviation of the normal distribution. It returns the value of x that satisfies the equation F_x(x) = p, where F_x(x) is the cumulative distribution function of the normal distribution.
+
+For the standard normal distribution, the mean is mu = 0 and the standard deviation is sigma = 1. To find the value of x at the 97.5th percentile, we need to find the value of x that satisfies the equation F_x(x) = 0.975. We can use the following code to do this:
+
+```{r}
+
+# Set the mean of the normal distribution
+mu = 0
+
+# Set the standard deviation of the normal distribution
+sigma = 1
+
+# Set the probability p
+p = 0.975
+
+# Find the value of x that satisfies the equation F_x(x) = p
+x = qnorm(p, mu, sigma)
+
+
+```
+
+This code will calculate the value of x that is at the 97.5th percentile of the standard normal distribution, which is the value of x that satisfies the equation F_x(x) = 0.975. The result will be a numerical value, which is the value of x at the 97.5th percentile of the standard normal distribution.
+
+As a specific example, using the above code will result in the following value for x:
+
+```{r}
+ x
+
+```
+
+### 4)
+
+#### a)
+
+```{r}
+# Set the mean of the normal distribution
+mu = 0
+
+# Set the standard deviation of the normal distribution
+sigma = 1
+
+# Set the number of draws to generate
+n = 1000
+
+# Generate a vector of independent draws from the normal distribution
+x = rnorm(n, mu, sigma)
+
+hist(x)
+
+```
+
+#### b)
+
+```{r}
+# Set the minimum value of the uniform distribution
+min = 0
+
+# Set the maximum value of the uniform distribution
+max = 1
+
+# Set the number of draws to generate
+n = 1000
+
+# Generate a vector of independent draws from the uniform distribution
+x = runif(n, min, max)
+
+# Set the mean of the normal distribution
+mu = 0
+
+# Set the standard deviation of the normal distribution
+sigma = 1
+
+# Convert the draws from the uniform distribution to the normal distribution
+x_norm = qnorm(x, mu, sigma)
+
+# Plot the vector of transformed values as a histogram
+hist(x_norm)
+
+
+```
+
+```{r}
+unifsims <- runif(1000, 0 , 1)
+hist(qnorm(unifsims, mean = 0, sd = 1))
+```
+
+
+```{r}
+r <- seq(-3, 3, length.out = 1000)
+cdf <- pnorm(r)
+#Draw the normal cumulative distribution function.
+plot(r, cdf, type = "l", xaxs = "i", yaxs = "i", xlim = c(-3, 3), xlab = expression(italic(x)), ylab = expression(paste(italic(F[X]), "(", italic(x), ")", sep = "")), lwd = 2)
+
+#Draw light grey lines representing random samples from the 
+#standard normal distribution.
+x <- rnorm(500)
+for(i in x){
+  lines(c(i,i), c(min(x), pnorm(i)), col = rgb(190, 190, 190, 	alpha = 60, max = 255))
+  lines(c(min(x)-1,i), c(pnorm(i), pnorm(i)), col = rgb(190, 	190, 190, alpha = 60, max = 255))
+}
+```
+
+
+

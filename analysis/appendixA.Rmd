@@ -175,3 +175,44 @@ SolveZero(fc)
 
 ```
 
+## Exercise 2
+
+### a
+
+#### second derivative
+
+```{r}
+
+findDeriv2 <- function(exp){
+  exp %>% 
+  y_fn("D(x)") %>% 
+  y_fn("D(x)") %>% 
+  yac_str()
+}
+```
+
+```{r results='asis'}
+findDeriv(fa) %>% 
+  findDeriv() %>% 
+  prettyPrint()
+
+findDeriv2(fa)
+
+```
+
+#### second solution
+```{r}
+SolveZero2 <- function(func) {
+  exp %>% 
+  y_fn("D(x)") %>% 
+  y_fn("D(x)") %>% 
+  y_fn("Solve", "x") %>% 
+  yac_str()
+}
+
+```
+
+```{r results='asis'}
+SolveZero2(fa)
+
+```
