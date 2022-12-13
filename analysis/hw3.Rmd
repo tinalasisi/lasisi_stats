@@ -1,0 +1,33 @@
+---
+title: "hw3"
+author: "Tina Lasisi"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+The largest value of a standard normal density function can be calculated as follows:
+```{r}
+
+# Set the mean and standard deviation of the normal distribution
+mu <- 0
+sigma <- 1
+
+# Calculate the density of the normal distribution at x = 0
+peak <- dnorm(x = 0, mean = mu, sd = sigma)
+
+# Print the peak value
+print(peak)
+
+
+```
+
+This is equal to 
+```{r} 
+
+1/sqrt(2*pi)
+
+```
+
+
