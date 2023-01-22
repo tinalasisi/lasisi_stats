@@ -1,0 +1,148 @@
+---
+title: "ch5"
+author: "Tina Lasisi"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output: workflowr::wflow_html
+editor_options:
+  chunk_output_type: console
+---
+
+
+## Set 5-1
+
+### 1
+#### a
+
+A Bernoulli random variable is a type of discrete random variable that can take on only two possible values, typically designated as 0 and 1. It is often used to represent the outcome of a binary event, such as the result of a coin flip (heads or tails) or the outcome of a yes/no question (yes or no).
+
+The probability distribution of a Bernoulli random variable is given by the following probability mass function:
+
+$$
+f(x) = p^x \cdot (1 - p)^{(1 - x)}
+$$
+
+where x is the value of the random variable (either 0 or 1), and p is the probability of success (i.e., the probability that the random variable takes on the value 1).
+
+For example, if p = 0.5, the probability distribution of the Bernoulli random variable is given by:
+
+$$
+f(0) = 0.5^0 \cdot (1 - 0.5)^{(1 - 0)} = 0.5 \cdot 1 = 0.5 \\
+f(1) = 0.5^1 \cdot (1 - 0.5)^{(1 - 1)} = 0.5 \cdot 0.5 = 0.25
+
+$$
+
+This means that there is a 50% chance that the Bernoulli random variable takes on the value 0, and a 50% chance that it takes on the value 1.
+
+The expected value of a Bernoulli random variable with parameter p is given by:
+
+$$
+E[X] = p  \cdot 1 + (1 - p)  \cdot 0 = p
+$$
+
+where E[X] is the expected value of the Bernoulli random variable X, and p is the probability of success (i.e., the probability that X takes on the value 1).
+
+For example, if p = 0.5, the expected value of X is 0.5, since there is a 50% chance that X takes on the value 1 and a 50% chance that it takes on the value 0. Similarly, if p = 0.75, the expected value of X is 0.75, since there is a 75% chance that X takes on the value 1 and a 25% chance that it takes on the value 0.
+
+#### b
+
+The expected value of a binomial random variable with parameters n and p is given by:
+
+$$E[X] = n \cdot p$$
+
+where E[X] is the expected value of the binomial random variable X, n is the number of trials, and p is the probability of success in each trial.
+
+This follows from the linearity of expectation, which states that for two random variables X and Y, and a constant c, the expected value of the sum X + Y is equal to the sum of the expected values of X and Y, and the expected value of the product cX is equal to the product of c and the expected value of X. Mathematically, this can be expressed as follows:
+
+$$E[X + Y] = E[X] + E[Y]$$
+
+$$E[cX] = c \cdot E[X]$$
+
+Since each trial in a binomial experiment has only two possible outcomes (success or failure), we can model it using a Bernoulli random variable. The expected value of a Bernoulli random variable with parameter p is p. Therefore, the expected value of the binomial random variable X is given by:
+
+$$E[B_1 + B_2 + ... + B_n] = E[B_1] + E[B_2] + ... + E[B_n] = p + p + ... + p = n \cdot p$$
+
+where B_i represents the Bernoulli random variable for the i-th trial, and n is the number of trials.
+
+Therefore, the expected value of a binomial random variable with parameters n and p is given by:
+
+$$E[X] = n \cdot p$$
+
+This means that if the number of trials n is 10 and the probability of success in each trial p is 0.5, the expected value of the binomial random variable X is 5, since there is a 50% chance of success in each trial and a total of 10 trials. Similarly, if n is 100 and p is 0.75, the expected value of X is 75, since there is a 75% chance of success in each trial and a total of 100 trials.
+
+
+### 2
+
+#### a
+
+When n = 1, the histogram of the sample means will be highly skewed and may not resemble a normal distribution, since it is based on only a single sample. As n increases, the histogram of the sample means will become more symmetrical and will approach a normal distribution, as predicted by the law of large numbers.
+
+To test this prediction, you can run the code provided in the prompt with different values of samp.size and observe how the histogram of the sample means changes. When samp.size is 1, the histogram will be highly skewed and may not resemble a normal distribution. As samp.size increases to 5, 20, 100, and 1000, the histogram will become more symmetrical and will approach a normal distribution, as the number of samples increases and the mean of the samples gets closer and closer to the expectation $\mu$.
+
+For example, if you run the code with samp.size set to 1, you might see a histogram that looks like this:
+
+```{r}
+# Set the sample size
+samp.size <- 1
+
+# Draw n.samps samples of size samp.size from a standard normal distribution
+n.samps <- 1000
+samps <- rnorm(samp.size * n.samps, mean = 0, sd = 1)
+
+# Create a matrix of samples
+samp.mat <- matrix(samps, ncol = n.samps)
+
+# Calculate the sample means
+samp.means <- colMeans(samp.mat)
+
+# Plot a histogram of the sample means
+hist(samp.means)
+
+```
+
+```{r}
+# Set the sample sizes to test
+samp.sizes <- c(1, 5, 20, 100, 1000)
+
+# Loop through the sample sizes and plot a histogram for each
+for (samp.size in samp.sizes) {
+  # Draw n.samps samples of the specified size from a standard normal distribution
+  n.samps <- 1000
+  samps <- rnorm(samp.size * n.samps, mean = 0, sd = 1)
+
+  # Create a matrix of samples
+  samp.mat <- matrix(samps, ncol = n.samps)
+
+  # Calculate the sample means
+  samp.means <- colMeans(samp.mat)
+
+  # Plot a histogram of the sample means
+  hist(samp.means, main = paste("Sample size:", samp.size), xlab = "Sample means")
+}
+
+
+```
+
+#### b
+
+```{r}
+# Set the sample sizes to test
+samp.sizes <- c(1, 5, 20, 100, 1000)
+
+# Loop through the sample sizes and plot a histogram for each
+for (samp.size in samp.sizes) {
+  # Draw n.samps samples of the specified size from a standard normal distribution
+  n.samps <- 1000
+  samps <- rnorm(samp.size * n.samps, mean = 0, sd = 1)
+
+  # Create a matrix of samples
+  samp.mat <- matrix(samps, ncol = n.samps)
+
+  # Calculate the sample means
+  samp.means <- colMeans(samp.mat)
+
+  # Plot a histogram of the sample means
+  hist(samp.means, main = paste("Sample size:", samp.size), xlab = "Sample means")
+}
+
+```
+
